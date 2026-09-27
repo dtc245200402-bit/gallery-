@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Simple Gallery</title>
+    <!-- Nhúng Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Thiết lập chung cho bộ sưu tập */
+        .custom-gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gallery-item {
+            padding: 10px;
+            /* Mặc định cho màn hình > 700px: 4 ảnh trên 1 dòng (100% / 4 = 25%) */
+            width: 25%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            aspect-ratio: 1 / 1; /* Cắt ảnh thành hình vuông cho đều nhau */
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03); /* Hiệu ứng phóng to nhẹ khi di chuột */
+        }
+
+        /* --- SỬ DỤNG MEDIA QUERY THEO YÊU CẦU --- */
+
+        /* Màn hình nhỏ hơn 700px: 2 ảnh trên 1 dòng */
+        @media screen and (max-width: 700px) {
+            .gallery-item {
+                width: 50%;
+            }
+        }
+
+        /* Màn hình nhỏ hơn 500px: 1 ảnh trên 1 dòng */
+        @media screen and (max-width: 500px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5 mb-5">
+        <h2 class="text-center mb-4">Responsive Image Gallery</h2>
+        
+        <div class="custom-gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506744626753-eda8183b0f19?w=500&q=80" alt="Gallery 1" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500&q=80" alt="Gallery 2" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=500&q=80" alt="Gallery 3" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=500&q=80" alt="Gallery 4" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500&q=80" alt="Gallery 5" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&q=80" alt="Gallery 6" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&q=80" alt="Gallery 7" class="shadow-sm">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=500&q=80" alt="Gallery 8" class="shadow-sm">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
